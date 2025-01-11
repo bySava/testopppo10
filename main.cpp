@@ -1,7 +1,12 @@
-double my_pow(double base, unsigned int exponent) {
-    double result = 1.0; // Инициализация результата как 1.0
-    for (unsigned int i = 0; i < exponent; i++) {
-        result *= base; // Умножение результата на основание в каждом цикле
-    }
-    return result; // Возвращаем окончательное значение
+double my_pow(double base, int exponent){
+	double temp = base;
+	for (int i = 1; i < abs(exponent); i++)
+	{
+		base = base * temp;
+	}
+	if (exponent < 0)
+	{
+		base = 1 / base;
+	}
+	return base;
 }
